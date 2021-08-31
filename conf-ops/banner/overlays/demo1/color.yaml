@@ -4,4 +4,4 @@
 
 - op: replace
   path: /spec/text
-  value: 'Your are logged on Openshift Cluster -> demo1' 
+  value: 'Your are logged on Openshift Cluster -> demo1 - ' 
