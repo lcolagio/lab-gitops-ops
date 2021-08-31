@@ -36,6 +36,14 @@ argocd --insecure --grpc-web cluster add ${CONTEXT}
 
 ## Add cluster configuration
 
+### Deploy OpenShift GitOps
+
+```
+oc apply -k https://github.com/lcolagio/conf-ops/openshift-gitops-operator/overlays/stable
+```
+
+
+
 ### Deploy Banner
 
 You can choose color here: https://www.color-hex.com/
