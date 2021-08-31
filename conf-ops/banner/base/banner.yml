@@ -1,0 +1,13 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleNotification
+metadata:
+  name: banner
+spec:
+  backgroundColor: '#EE0000'
+  color: '#000'
+  link:
+    href: >-
+      https:/www.xxx.com
+    text: text
+  location: BannerTop
+  text: Please no test on this cluster ! 

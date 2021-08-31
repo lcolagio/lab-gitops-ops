@@ -1,3 +1,8 @@
 # Lab GitOps for Ops
 
-hello
+
+## Deploy Banner
+
+You can choose color here: https://www.color-hex.com/
+
+oc apply -k 

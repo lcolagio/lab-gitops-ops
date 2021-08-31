@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: banner-lab1
+  name: banner-demo1
   namespace: openshift-gitops
 spec:
   project: default
   source:
-    repoURL: https://github.com/redlabclub/openshift4-config
-    path: conf-banner/overlays/lab1
+    repoURL: https://github.com/lcolagio/lab-gitops-ops
+    path: conf-banner/overlays/demo1
   destination:
-    name: lab1
+    name: demo1
   syncPolicy:
     automated:
       prune: false
