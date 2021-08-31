@@ -46,6 +46,15 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 
 # Annexes
 
+## Connect to Repo Git
+
+git clone https://github.com/lcolagio/lab-gitops-ops
+cd lab-gitops-ops
+
+git config --global user.name "lcolagio"
+git config --global user.email "lcolagio@redhat.com"
+
+Use git token ...
 ```
-git add . && git commit -m "xxx" && git push
+git pull && git add . && git commit -m "xxx" && git push
 ```
