@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/backgroundColor
+  value: '#41d47f'
