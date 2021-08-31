@@ -42,4 +42,4 @@ You can choose color here: https://www.color-hex.com/
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/banner-demo1.yaml
 ```
 
-# xxxxxx
+# xxxxxxx
