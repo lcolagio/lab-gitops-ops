@@ -7,6 +7,6 @@ spec:
   color: '#000'
   link:
     href: https://github.com/lcolagio/lab-gitops-ops
-    text: Github Ops
+    text: '- Git Ops Repository'
   location: BannerTop
   text: Please no test on this cluster ! 
