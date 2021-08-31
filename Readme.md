@@ -1,15 +1,29 @@
 # Lab GitOps for Ops
 
-## Add context to add a cluster to argocd
 
-### Add cluster OCP
+## Deploy OpenShift GitOps
+
+```
+oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
+```
+or
+```
+git clone https://github.com/lcolagio/lab-gitops-ops
+oc apply -k lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
+```
+
+
+## Add cluster to argocd
+
+### Create context
 
 ```
 CONTEXT=demo1
 CLUSTER=cluster-${GUID}
 DOMAIN=sandbox392.opentlc.com
+KUBEADMIN_PWD=xxxx
 
-oc login -u admin -p admin --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
+oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
 oc config rename-context $(oc config current-context) ${CONTEXT}
 ```
 
@@ -35,13 +49,6 @@ argocd --insecure --grpc-web cluster add ${CONTEXT}
 
 
 ## Add cluster configuration
-
-### Deploy OpenShift GitOps
-
-```
-oc apply -k https://github.com/lcolagio/conf-ops/openshift-gitops-operator/overlays/stable
-```
-
 
 
 ### Deploy Banner
