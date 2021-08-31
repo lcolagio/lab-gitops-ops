@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-banner/overlays/demo1
+    path: conf-ops/banner/overlays/demo1
   destination:
     name: demo1
   syncPolicy:
