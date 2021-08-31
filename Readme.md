@@ -1,7 +1,7 @@
 # Lab GitOps for Ops
 
 
-## Deploy OpenShift GitOps
+## Deploy OpenShift GitOps (ArgoCD)
 
 ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
@@ -13,7 +13,7 @@ oc apply -k lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 ```
 
 
-## Add cluster to argocd
+## Add managed OCP cluster to ArgoCD
 
 ### Create context
 
