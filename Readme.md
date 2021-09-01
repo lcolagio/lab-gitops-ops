@@ -121,3 +121,7 @@ Use git token ...
 ```
 git pull && git add . && git commit -m "xxx" && git push
 ```
+
+### Kubernetes Kustomize - JsonPatches6902 overview
+
+https://skryvets.com/blog/2019/05/15/kubernetes-kustomize-json-patches-6902/
