@@ -1,5 +1,5 @@
 - op: add
-  path: /users/
+  path: /users/-
   value: 
   - ops2
   - ops3
