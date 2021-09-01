@@ -13,3 +13,7 @@ spec:
     path: conf-ops/oauth/overlays/demo1/htpass
   destination:
     name: demo1
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -15,5 +15,5 @@ spec:
     name: demo1
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
