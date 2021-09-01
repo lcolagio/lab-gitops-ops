@@ -1,6 +1,3 @@
-- op: add
-  path: /users-
-  value:
-    name: 
-      - dev1
-      - dev2
+- op: replace
+  path: /users
+  value: dev1

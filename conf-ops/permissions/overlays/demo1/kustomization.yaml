@@ -4,5 +4,13 @@ kind: Kustomization
 bases:
   - ../../base
 
-resources:
-  - grp-dev.yaml
+# resources:
+#   - grp-dev.yaml
+
+patchesJson6902:
+  - target:
+      group: user.openshift.io/v1
+      version: v1
+      kind: Group
+      name: dev
+    path: grp-dev-patch.yaml
