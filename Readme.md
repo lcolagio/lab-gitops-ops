@@ -63,7 +63,7 @@ ARGO_ROUTE=$(oc get route openshift-gitops-server -o jsonpath='{.spec.host}' -n 
 argocd --insecure --grpc-web login $ARGO_ROUTE:443  --username admin --password $ARGO_PWD
 ```
 
-### Add Cluster to ArgoCD
+### Add managed cluster to ArgoCD
 ```
 argocd --insecure --grpc-web cluster add ${CONTEXT}
 ```
@@ -73,7 +73,8 @@ argocd --insecure --grpc-web cluster add ${CONTEXT}
 
 ### Configure Banner
 
-You can choose color here: https://www.color-hex.com/
+You can choose color ;-)
+https://www.color-hex.com/
 
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/banner-demo1.yaml
@@ -91,9 +92,6 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/permissions-demo1.yaml
 ```
 
-
-### ...
-
 ## ...
 
 ### ...
@@ -103,6 +101,14 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 ### ...
 
 ## ...
+
+## Draf Cconfiguration
+
+### configure ArgoCD Vault plugin
+
+```
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/draft/argocd-vault-plugin/base
+```
 
 
 ## Annexes
