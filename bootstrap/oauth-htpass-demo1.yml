@@ -1,0 +1,13 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oauth-htpass-lab1
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/lcolagio/lab-gitops-ops
+    path: conf-ops/conf-oauth/overlays/htpass
+  destination:
+    name: lab1
