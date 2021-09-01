@@ -23,9 +23,11 @@ htpasswd -b -B htpasswd user3 xxxx
 htpasswd -b -B htpasswd dev1 xxxx
 htpasswd -b -B htpasswd dev2 xxxx
 htpasswd -b -B htpasswd dev3 xxxx
+
 htpasswd -b -B htpasswd ops1 xxxx
 htpasswd -b -B htpasswd ops2 xxxx
 htpasswd -b -B htpasswd ops3 xxxx
+
 htpasswd -b -B htpasswd manager1 xxxx
 htpasswd -b -B htpasswd manager2 xxxx
 htpasswd -b -B htpasswd manager3 xxxx
