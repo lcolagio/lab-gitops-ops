@@ -22,7 +22,7 @@ oc apply -k lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 CONTEXT=ocp-lab1
 CLUSTER=ocp-lab1
 DOMAIN=dev.redlabclub.eu
-KUBEADMIN_PWD=xxx
+KUBEADMIN_PWD=xxxx
 
 oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
 oc config rename-context $(oc config current-context) ${CONTEXT}
@@ -32,7 +32,7 @@ oc config rename-context $(oc config current-context) ${CONTEXT}
 CONTEXT=demo1
 CLUSTER=cluster-${GUID}
 DOMAIN=sandbox392.opentlc.com
-KUBEADMIN_PWD=q7QFC-58QfC-jIoWS-sXdfJ
+KUBEADMIN_PWD=xxxx
 
 oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
 oc config rename-context $(oc config current-context) ${CONTEXT}

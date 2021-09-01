@@ -10,4 +10,4 @@ patchesJson6902:
     version: v1
     kind: ConsoleNotification
     name: banner
-  path: color.yaml
+  path: baner-patch.yaml
