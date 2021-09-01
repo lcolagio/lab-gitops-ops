@@ -1,4 +1,4 @@
-# Create htpassword
+# Create / update htpassword
 
 ```
 echo "Creating htpasswd file"

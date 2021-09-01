@@ -86,7 +86,12 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/oauth-htpass-demo1.yaml
 ```
 
-## ...
+### Configure Permissions
+
+```
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/oauth-htpass-demo1.yaml
+```
+
 
 ### ...
 
