@@ -17,7 +17,6 @@ oc apply -k lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 
 ### Create context
 
-
 <!-- ```
 CONTEXT=ocp-lab1
 CLUSTER=ocp-lab1

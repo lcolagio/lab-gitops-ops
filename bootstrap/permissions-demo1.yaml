@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application 
 metadata:
-  name: banner-demo1
+  name: permissions-demo1
   namespace: openshift-gitops
   labels:
-    gitops: banner
+    gitops: permissions
 spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-ops/banner/overlays/demo1
+    path: conf-ops/permissions/overlays/demo1
   destination:
     name: demo1
   syncPolicy:
