@@ -6,12 +6,12 @@ Example with add or replace patchesJson6902
 - op: add
   path: /users/-
   value:
-    ops2
+    ops1
 
 - op: add
   path: /users/-
   value:
-    ops3
+    ops2
 ```
 
 or 

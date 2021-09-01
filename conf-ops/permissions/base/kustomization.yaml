@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - grp-admin.yaml
+  - grp-user.yaml
   - grp-dev.yaml
   - grp-ops.yaml
   - grp-manager.yaml

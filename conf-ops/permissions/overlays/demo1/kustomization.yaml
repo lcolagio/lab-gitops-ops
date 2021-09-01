@@ -4,6 +4,9 @@ kind: Kustomization
 bases:
   - ../../base
 
+ressources:
+  - grp-users-patch.yaml
+
 patchesJson6902:
   - target:
       group: user.openshift.io

@@ -1,0 +1,28 @@
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: ops
+users
+  - john
+  - paul
+  - ringo
+  - george
+  - pete
+  - andrew
+  - karla
+  - marina
+  - user1
+  - user2
+  - user3
+  - dev1
+  - dev2
+  - dev3
+  - ops1
+  - ops2
+  - ops3
+  - manager1
+  - manager2
+  - manager3
+  - dev
+  - qua 
+  - prd
