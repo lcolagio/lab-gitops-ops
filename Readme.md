@@ -106,8 +106,17 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 
 ### configure ArgoCD Vault plugin
 
+#### Configurer le DEX
 ```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/draft/argocd-vault-plugin/base
+...
+```
+
+#### Configurer le vault-plugin
+
+```
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/base/sa-vplugin.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/argocd-vault-plugin-demo1.yaml
+
 ```
 
 
