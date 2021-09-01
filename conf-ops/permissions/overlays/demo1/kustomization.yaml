@@ -9,7 +9,7 @@ bases:
 
 patchesJson6902:
   - target:
-      group: user.openshift.io/v1
+      group: user.openshift.io
       version: v1
       kind: Group
       name: dev
