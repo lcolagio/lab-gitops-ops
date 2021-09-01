@@ -72,7 +72,7 @@ argocd --insecure --grpc-web cluster add ${CONTEXT}
 ## Add cluster configuration
 
 
-### Deploy Banner
+### Configure Banner
 
 You can choose color here: https://www.color-hex.com/
 
@@ -80,7 +80,11 @@ You can choose color here: https://www.color-hex.com/
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/banner-demo1.yaml
 ```
 
-### ...
+### Configure Oauth-htpass
+
+```
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/oauth-htpass-demo1.yaml
+```
 
 ## ...
 

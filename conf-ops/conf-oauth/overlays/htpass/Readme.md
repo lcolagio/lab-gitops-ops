@@ -2,16 +2,37 @@
 
 ```
 echo "Creating htpasswd file"
-htpasswd -c -b -B htpasswd admin xxxxxx
 
-htpasswd -b -B htpasswd user1 xxxxxxx
-htpasswd -b -B htpasswd user2 xxxxxxx
-htpasswd -b -B htpasswd user3 xxxxxxx
-htpasswd -b -B htpasswd user4 xxxxxxx
+htpasswd -c -b -B htpasswd opentlc-mgr xxxx
+htpasswd -b -B htpasswd admin xxxx
 
-htpasswd -b -B htpasswd dev xxxxxxx
-htpasswd -b -B htpasswd qua xxxxxxx
-htpasswd -b -B htpasswd prd xxxxxxx
+htpasswd -b -B htpasswd john xxxx
+htpasswd -b -B htpasswd paul xxxx
+htpasswd -b -B htpasswd ringo xxxx
+htpasswd -b -B htpasswd george xxxx
+htpasswd -b -B htpasswd pete xxxx
+
+htpasswd -b -B htpasswd andrew xxxx
+htpasswd -b -B htpasswd karla xxxx
+htpasswd -b -B htpasswd marina xxxx
+
+htpasswd -b -B htpasswd user1 xxxx
+htpasswd -b -B htpasswd user2 xxxx
+htpasswd -b -B htpasswd user3 xxxx
+
+htpasswd -b -B htpasswd dev1 xxxx
+htpasswd -b -B htpasswd dev2 xxxx
+htpasswd -b -B htpasswd dev3 xxxx
+htpasswd -b -B htpasswd ops1 xxxx
+htpasswd -b -B htpasswd ops2 xxxx
+htpasswd -b -B htpasswd ops3 xxxx
+htpasswd -b -B htpasswd manager1 xxxx
+htpasswd -b -B htpasswd manager2 xxxx
+htpasswd -b -B htpasswd manager3 xxxx
+
+htpasswd -b -B htpasswd dev xxxx
+htpasswd -b -B htpasswd qua xxxx
+htpasswd -b -B htpasswd prd xxxx
 ```
 
 ```
