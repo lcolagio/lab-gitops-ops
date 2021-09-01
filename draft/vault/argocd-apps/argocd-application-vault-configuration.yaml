@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-client-configuration
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: vault
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://gitea.apps.cluster-wk.dynamic.opentlc.com/lab-user/cluster-configuration
+    path: ./argocd-vault-client-configuration
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

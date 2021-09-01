@@ -1,0 +1,44 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-client-helm
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: vault
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: vault
+    helm:
+      parameters:
+      - name: "global.openshift"
+        value: true
+      - name: "injector.authPath"
+        value: auth/ocp-wkacm
+      - name: "injector.externalVaultAddr"
+        value: https://vault-vault.apps.cluster-wk.dynamic.opentlc.com
+      - name: "injector.image.repository"
+        value: registry.connect.redhat.com/hashicorp/vault-k8s
+      - name: "injector.image.tag"
+        value: 0.12.0-ubi
+      - name: "injector.agentImage.repository"
+        value: registry.connect.redhat.com/hashicorp/vault
+      - name: "injector.agentImage.tag"
+        value: 1.8.1-ubi
+      - name: "server.enabled"
+        value: false
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.15.0
+  ignoreDifferences:
+  - group: admissionregistration.k8s.io
+    kind: MutatingWebhookConfiguration
+    jsonPointers:
+    - /webhooks/0/clientConfig/caBundle
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

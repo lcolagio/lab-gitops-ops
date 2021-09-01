@@ -1,0 +1,44 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: setup-vault-client
+  namespace: vault
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  backoffLimit: 0
+  completions: 1
+  parallelism: 1
+  template:
+    spec:
+      containers:
+      - name: setup-vault-client
+        #image: image-registry.openshift-image-registry.svc:5000/vault/ocvault:latest
+        image: quay.io/gpte-devops-automation/ocvault:v4.8
+        imagePullPolicy: Always
+        env:
+        - name: VAULT_ADDR
+          value: https://vault-vault.apps.cluster-wk.dynamic.opentlc.com
+        - name: VAULT_TOKEN
+          value: "s.rtFPQRa1zRX9cI1Sq7IeRH8W"
+        - name: CLUSTER_NAME
+          value: wkacm
+        command:
+        - /bin/bash
+        - -c
+        - |
+          # Set up Vault Client
+          echo "Setting up Vault Client for cluster ${CLUSTER_NAME}..."
+          echo "******************************************************"
+          vault write auth/ocp-${CLUSTER_NAME}/config \
+                      issuer=https://kubernetes.default.svc \
+                      token_reviewer_jwt=@/var/run/secrets/kubernetes.io/serviceaccount/token \
+                      kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt \
+                      kubernetes_host=https://api.wkacm.example.opentlc.com:6443
+          echo "Done. Returncode $?"
+
+      dnsPolicy: ClusterFirst
+      restartPolicy: OnFailure
+      serviceAccountName: vault-tokenreview
+      terminationGracePeriodSeconds: 30
