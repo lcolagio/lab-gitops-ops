@@ -10,6 +10,6 @@ spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-ops/conf-oauth/overlays/htpass
+    path: conf-ops/oauth/overlays/htpass
   destination:
     name: demo1
