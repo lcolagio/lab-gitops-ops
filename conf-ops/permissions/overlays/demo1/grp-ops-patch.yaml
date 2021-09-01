@@ -4,6 +4,6 @@
 #    ops3
    
 - op: add
-  path: /users/
+  path: /users/-
   value:
-  - ops3
+  ops3
