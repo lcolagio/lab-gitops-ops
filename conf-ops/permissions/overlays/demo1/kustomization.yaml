@@ -14,3 +14,11 @@ patchesJson6902:
       kind: Group
       name: dev
     path: grp-dev-patch.yaml
+
+
+  - target:
+      group: user.openshift.io
+      version: v1
+      kind: Group
+      name: ops
+    path: grp-ops-patch.yaml

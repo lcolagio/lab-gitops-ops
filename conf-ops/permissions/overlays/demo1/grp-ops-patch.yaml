@@ -1,0 +1,6 @@
+- op: replace
+  path: /users
+  value: 
+  - ops2
+  - ops3
+
