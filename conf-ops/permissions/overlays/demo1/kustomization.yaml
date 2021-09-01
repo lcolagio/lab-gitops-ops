@@ -4,10 +4,14 @@ kind: Kustomization
 bases:
   - ../../base
 
-# resources:
-#   - grp-dev.yaml
-
 patchesJson6902:
+  - target:
+      group: user.openshift.io
+      version: v1
+      kind: Group
+      name: admin
+    path: grp-admin-patch.yaml
+
   - target:
       group: user.openshift.io
       version: v1
@@ -15,10 +19,16 @@ patchesJson6902:
       name: dev
     path: grp-dev-patch.yaml
 
-
   - target:
       group: user.openshift.io
       version: v1
       kind: Group
       name: ops
     path: grp-ops-patch.yaml
+
+  - target:
+      group: user.openshift.io
+      version: v1
+      kind: Group
+      name: manager
+    path: grp-manager-patch.yaml

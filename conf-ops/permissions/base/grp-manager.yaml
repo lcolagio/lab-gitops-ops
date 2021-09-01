@@ -1,9 +1,5 @@
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
-  name: dev
-users:
-  - dev1
-  - dev2
-  - dev3
-
+  name: manager
+users: []
