@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false 
+  name: sealed-secrets-operator-helm
+  namespace: sealed-secrets
+spec:
+  channel: alpha
+  installPlanApproval: Manual
+  name: sealed-secrets-operator-helm
+  source: community-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: sealed-secrets-operator-helm.v0.0.2
