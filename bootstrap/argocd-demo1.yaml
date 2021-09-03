@@ -12,10 +12,10 @@ spec:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
     path: conf-ops/argocd/overlays/demo1
   destination:
-    name: demo1
+    name: in-cluster
   syncPolicy:
-    # automated:
-    #   prune: true
-    #   selfHeal: true
+    automated:
+      prune: false
+      selfHeal: false
 
 
