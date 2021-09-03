@@ -1,0 +1,21 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-gitops-operator
+  namespace: openshift-operators
+  labels:
+    operators.coreos.com/openshift-gitops-operator.openshift-operators: ''
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false   
+    argocd.argoproj.io/sync-wave: "-2"   
+spec:
+  channel: <patch-me>
+  config:
+    env:
+      - name: DISABLE_DEX
+        value: 'false'
+  installPlanApproval: Automatic
+  name: openshift-gitops-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+#  startingCSV: openshift-gitops-operator.v1.2.0

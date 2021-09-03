@@ -1,0 +1,12 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleNotification
+metadata:
+  name: banner
+spec:
+  backgroundColor: '#EE0000'
+  color: '#000'
+  link:
+    href: https://github.com/lcolagio/lab-gitops-ops
+    text: 'Git Ops Repository'
+  location: BannerTop
+  text: To complet ... 
