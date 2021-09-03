@@ -14,7 +14,7 @@ patches:
 patches:
 -  target:
      kind: argocd
-    #  group: argoproj.io
+     group: argoproj.io
      name: openshift-gitops
    path: dex-argocd-patch.yaml
 
