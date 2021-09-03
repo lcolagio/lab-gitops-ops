@@ -114,6 +114,10 @@ oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-o
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-demo1.yaml
 ```
 
+<!-- ```
+kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/demo1
+``` -->
+
 ## ...
 
 ### ...
