@@ -24,7 +24,6 @@ patches:
    path: repo-patch.yaml
 
 
-
 # patches:
 # -  target:
 #      kind: Subscription
