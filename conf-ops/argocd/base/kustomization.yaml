@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - subscription.yaml
-  - repo1.yaml
+#  - repo1.yaml

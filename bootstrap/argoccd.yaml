@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application 
+metadata:
+  name: argoccd-demo1
+  namespace: openshift-gitops
+  labels:
+    gitops: argoccd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/lcolagio/lab-gitops-ops
+    path: conf-ops/argoccd/overlays
+  destination:
+    name: demo1
+  syncPolicy:
+    # automated:
+    #   prune: true
+    #   selfHeal: true
+
+
