@@ -20,3 +20,15 @@ patches:
         env:
           - name: DISABLE_DEX
             value: 'false'
+
+-  target:
+     kind: ConfigMap
+     name: argocd-cm
+   patch: |-
+    - op: add
+      path: /data
+      value: 
+        repositories: |
+          - name: git1
+            type: git
+            url: https://github.com/lcolagio/lab-gitops-ops
