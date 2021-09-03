@@ -101,9 +101,9 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator.yaml
 ```
 
-```
+<!-- ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/base
-```
+``` -->
 ## 
 
 ## ...
@@ -144,7 +144,8 @@ git config --global user.email "lcolagio@redhat.com"
 
 Use git token ...
 ```
-git pull && git add . && git commit -m "xxx" && git push
+git pull
+git add . && git commit -m "xxx" && git push
 ```
 
 ### Kubernetes Kustomize - JsonPatches6902 overview
