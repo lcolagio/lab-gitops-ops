@@ -10,11 +10,11 @@ patches:
      kind: Subscription
      name: openshift-gitops-operator
    path: dex-subscription-patch.yaml
-
-patches:
+   
 -  target:
      kind: ArgoCD
-    #  group: argoproj.io
+     group: argoproj.io
+     version: v1alpha1
      name: openshift-gitops
    path: dex-argocd-patch.yaml
 
