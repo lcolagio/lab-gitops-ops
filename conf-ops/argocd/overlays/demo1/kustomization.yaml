@@ -19,4 +19,4 @@ patches:
       value: 
         env:
           - name: DISABLE_DEX
-            value: 'false'
+            value: 'true'
