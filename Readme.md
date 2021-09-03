@@ -6,10 +6,18 @@
 ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 ```
-or
+
+
+Login to ArgoCD
 ```
-git clone https://github.com/lcolagio/lab-gitops-ops
-oc apply -k lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
+ARGO_PWD=$(oc -n openshift-gitops get secret openshift-gitops-cluster -o jsonpath='{.data.admin\.password}' | base64 -d)
+ARGO_ROUTE=$(oc get route openshift-gitops-server -o jsonpath='{.spec.host}' -n openshift-gitops)
+argocd --insecure --grpc-web login $ARGO_ROUTE:443  --username admin --password $ARGO_PWD
+```
+
+Add Git Repo to ArgoCD
+```
+argocd repo add https://github.com/lcolagio/lab-gitops-ops  --name git1
 ```
 
 
@@ -56,17 +64,15 @@ Comeback to OCP hub cluster
 oc config use-context admin
 ```
 
-Login to ArgoCD
-```
-ARGO_PWD=$(oc -n openshift-gitops get secret openshift-gitops-cluster -o jsonpath='{.data.admin\.password}' | base64 -d)
-ARGO_ROUTE=$(oc get route openshift-gitops-server -o jsonpath='{.spec.host}' -n openshift-gitops)
-argocd --insecure --grpc-web login $ARGO_ROUTE:443  --username admin --password $ARGO_PWD
-```
-
 ### Add managed cluster to ArgoCD
 ```
 argocd --insecure --grpc-web cluster add ${CONTEXT}
 ```
+
+
+<!-- ```  ``` -->
+<!-- ```  ``` -->
+<!-- ```  ``` -->
 
 ## Add cluster configuration
 
@@ -95,7 +101,6 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 
 
 ### Configure sealedSecret
-
 
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator.yaml
@@ -129,6 +134,9 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 
 ```
 
+<!-- ```  ``` -->
+<!-- ```  ``` -->
+<!-- ```  ``` -->
 
 ## Annexes
 
