@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/sync-options: Prune=false   
     argocd.argoproj.io/sync-wave: "-2"   
 spec:
-  channel: <patch-me>
+  channel: stable
   # config:
   #   env:
   #     - name: DISABLE_DEX
