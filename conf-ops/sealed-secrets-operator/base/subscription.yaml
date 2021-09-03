@@ -11,4 +11,4 @@ spec:
   name: sealed-secrets-operator-helm
   source: community-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: sealed-secrets-operator-helm.v0.0.2
+# startingCSV: sealed-secrets-operator-helm.v0.0.2
