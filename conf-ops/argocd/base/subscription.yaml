@@ -10,12 +10,12 @@ metadata:
     argocd.argoproj.io/sync-wave: "-2"   
 spec:
   channel: <patch-me>
-  config:
-    env:
-      - name: DISABLE_DEX
-        value: 'false'
+  # config:
+  #   env:
+  #     - name: DISABLE_DEX
+  #       value: 'false'
   installPlanApproval: Automatic
   name: openshift-gitops-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-#  startingCSV: openshift-gitops-operator.v1.2.0
+  # startingCSV: openshift-gitops-operator.v1.2.0
