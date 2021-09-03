@@ -96,11 +96,13 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 
 ### Configure sealedSecret
 
+
+```
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator.yaml
+```
+
 ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/base
-oc apply -k https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/conf-ops/sealed-secrets-operator/base 
-
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/conf-ops/sealed-secrets-operator/base
 ```
 
 
