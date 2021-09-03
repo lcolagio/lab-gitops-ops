@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-ops/argocd/overlays
+    path: conf-ops/argocd/overlays/demo1
   destination:
     name: demo1
   syncPolicy:
