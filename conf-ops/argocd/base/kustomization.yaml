@@ -5,7 +5,7 @@ resources:
   - subscription.yaml
   - argocd-cm.yaml
   - argocd.yaml
-  - dev-projet.yaml
-  - ops-projet.yaml
+  - dev-appprojet.yaml
+  - ops-appprojet.yaml
   
 
