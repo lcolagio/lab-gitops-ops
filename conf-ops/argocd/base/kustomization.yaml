@@ -5,4 +5,4 @@ resources:
   - subscription.yaml
   - argocd-cm.yaml
   - argocd.yaml
-#  - repo1.yaml
+
