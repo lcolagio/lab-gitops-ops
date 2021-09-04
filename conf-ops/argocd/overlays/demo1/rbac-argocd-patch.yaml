@@ -1,0 +1,6 @@
+- op: add
+  path: /spec/rbac
+  value: 
+    defaultPolicy: 'role:readonly'
+    policy: 'g, ADMIN, role:admin'
+    scopes: '[groups]'
