@@ -1,9 +1,9 @@
-ind: Secret
+kind: Secret
 apiVersion: v1
 metadata:
   annotations:
     managed-by: argocd.argoproj.io
-  name: cluster-api.cluster-0602.sandbox392.opentlc.com-2066615071
+  name: cluster-api.cluster-0602.sandbox392.opentlc.com-xxxxxxx
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: cluster
