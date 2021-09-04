@@ -6,7 +6,7 @@ bases:
   - ../../base
 
 resources:
-  - cluser1.yaml
+  - cluster1.yaml
 
 patches:
 -  target:
