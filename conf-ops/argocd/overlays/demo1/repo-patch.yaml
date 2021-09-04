@@ -5,11 +5,6 @@
       - name: git1
         type: git
         url: https://github.com/lcolagio/lab-gitops-ops
-
-# - op: add
-#   path: /data
-#   value: 
-#     repositories: |
       - name: git-lab-vault-plugin
         type: git
         url: https://github.com/lcolagio/lab-vault-plugin
