@@ -22,8 +22,8 @@ data:
   repositories: ''
   ga.anonymizeusers: 'false'
   help.chatUrl: ''
-  url: >-
-    https://openshift-gitops-server-openshift-gitops.apps.cluster-0602.sandbox392.opentlc.com
+  # url: >-
+  #   https://openshift-gitops-server-openshift-gitops.apps.cluster-0602.sandbox392.opentlc.com
   help.chatText: ''
   kustomize.buildOptions: ''
   resource.inclusions: ''

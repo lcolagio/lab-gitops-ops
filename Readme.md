@@ -15,6 +15,7 @@ oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops
 ARGO_PWD=$(oc -n openshift-gitops get secret openshift-gitops-cluster -o jsonpath='{.data.admin\.password}' | base64 -d)
 ARGO_ROUTE=$(oc get route openshift-gitops-server -o jsonpath='{.spec.host}' -n openshift-gitops)
 argocd --insecure --grpc-web login $ARGO_ROUTE:443  --username admin --password $ARGO_PWD
+echo ${ARGO_PWD}
 ```
 
 ### Add Git Repo to ArgoCD
