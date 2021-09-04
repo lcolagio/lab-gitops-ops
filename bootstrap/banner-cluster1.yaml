@@ -1,18 +1,18 @@
 ---
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: Application 
 metadata:
-  name: oauth-htpass-demo1
+  name: banner-cluster1
   namespace: openshift-gitops
   labels:
-    gitops: oauth-htpass
+    gitops: banner
 spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-ops/oauth/overlays/demo1/htpass
+    path: conf-ops/banner/overlays/cluster1
   destination:
-    name: demo1
+    name: cluster1
   syncPolicy:
     automated:
       prune: true

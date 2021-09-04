@@ -1,21 +1,19 @@
 ---
 apiVersion: argoproj.io/v1alpha1
-kind: Application 
+kind: Application
 metadata:
-  name: argocd-demo1
+  name: oauth-htpass-cluster1
   namespace: openshift-gitops
   labels:
-    gitops: argocd
+    gitops: oauth-htpass
 spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-ops/argocd/overlays/demo1
+    path: conf-ops/oauth/overlays/cluster1/htpass
   destination:
-    name: in-cluster
+    name: cluster1
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
-
-
+      prune: true
+      selfHeal: true

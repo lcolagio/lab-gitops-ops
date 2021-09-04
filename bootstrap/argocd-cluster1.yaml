@@ -2,20 +2,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application 
 metadata:
-  name: sealed-secret-operator-demo1
+  name: argocd-cluster1
   namespace: openshift-gitops
   labels:
-    gitops: sealed-secret-operator
+    gitops: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
-    path: conf-ops/sealed-secrets-operator/base
+    path: conf-ops/argocd/overlays/cluster1
   destination:
-    name: demo1
+    name: in-cluster
   syncPolicy:
-    # automated:
-    #   prune: true
-    #   selfHeal: true
+    automated:
+      prune: false
+      selfHeal: false
 
 

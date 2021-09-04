@@ -39,7 +39,7 @@ oc config rename-context $(oc config current-context) ${CONTEXT}
 ``` -->
 
 ```
-CONTEXT=demo2
+CONTEXT=cluster1
 CLUSTER=cluster-0602
 DOMAIN=sandbox392.opentlc.com
 KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq
@@ -84,25 +84,25 @@ You can choose color ;-)
 https://www.color-hex.com/
 
 ```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/banner-demo1.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/banner-cluster1.yaml
 ```
 
 ### Configure Oauth-htpass
 
 ```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/oauth-htpass-demo1.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/oauth-htpass-cluster1.yaml
 ```
 
 ### Configure Permissions
 
 ```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/permissions-demo1.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/permissions-cluster1.yaml
 ```
 
 ### Configure sealedSecret
 
 ```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator-demo1.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator-cluster1.yaml
 ```
 
 <!-- ```
@@ -112,11 +112,11 @@ oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-o
 ### Configure Argocd
 
 ```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-demo1.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-cluster1.yaml
 ```
 
 <!-- ```
-kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/demo1
+kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/cluster1
 ``` -->
 
 ## ...
@@ -147,7 +147,7 @@ kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overl
 
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/base/sa-vplugin.yaml
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/argocd-vault-plugin-demo1.yaml
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/argocd-vault-plugin-cluster1.yaml
 
 ```
 
