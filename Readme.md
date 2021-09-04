@@ -9,66 +9,20 @@
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 ```
 
+### Configure Argocd
 
-### Login to ArgoCD
+Add Dex, GitRepo, Cluster ...
 ```
-ARGO_PWD=$(oc -n openshift-gitops get secret openshift-gitops-cluster -o jsonpath='{.data.admin\.password}' | base64 -d)
-ARGO_ROUTE=$(oc get route openshift-gitops-server -o jsonpath='{.spec.host}' -n openshift-gitops)
-argocd --insecure --grpc-web login $ARGO_ROUTE:443  --username admin --password $ARGO_PWD
-echo ${ARGO_PWD}
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-cluster1.yaml
 ```
-
-### Add Git Repo to ArgoCD
-```
-argocd repo add https://github.com/lcolagio/lab-gitops-ops  --name git1
-```
-
-
-## Add managed OCP cluster to ArgoCD
-
-### Create context
 
 <!-- ```
-CONTEXT=ocp-lab1
-CLUSTER=ocp-lab1
-DOMAIN=dev.redlabclub.eu
-KUBEADMIN_PWD=xxxx
-
-oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
-oc config rename-context $(oc config current-context) ${CONTEXT}
+kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/cluster1
 ``` -->
 
-```
-CONTEXT=cluster1
-CLUSTER=cluster-0602
-DOMAIN=sandbox392.opentlc.com
-KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq
-
-oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
-oc config rename-context $(oc config current-context) ${CONTEXT}
-```
-
-### Show context
-
-```
-oc config  get-contexts  | grep ${CONTEXT}
-```
-
-### Switch context
-```
-oc config use-context ${CONTEXT}
-oc config current-context && oc whoami
-```
-
-### Comeback to OCP hub cluster
-```
-oc config use-context admin
-```
-
-### Add managed cluster to ArgoCD
-```
-argocd --insecure --grpc-web cluster add ${CONTEXT}
-```
+<!-- ```  ``` -->
+<!-- ```  ``` -->
+<!-- ```  ``` -->
 
 
 <!-- ```  ``` -->
@@ -104,21 +58,10 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator-cluster1.yaml
 ```
-
 <!-- ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/base
 ``` -->
 
-### Configure Argocd
-
-```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-cluster1.yaml
-```
-
-<!-- ```
-kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/cluster1
-``` -->
-
 ## ...
 
 ### ...
@@ -128,7 +71,6 @@ kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overl
 ### ...
 
 ## ...
-
 
 ### ...
 
@@ -155,24 +97,55 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 <!-- ```  ``` -->
 <!-- ```  ``` -->
 
-## Annexes
+# Annexes
 
-### Connect to Repo Git
 
-````
-git clone https://github.com/lcolagio/lab-gitops-ops
-cd lab-gitops-ops
-
-git config --global user.name "lcolagio"
-git config --global user.email "lcolagio@redhat.com"
-````
-
-Use git token ...
+## Login to ArgoCD
 ```
-git pull
-git add . && git commit -m "xxx" && git push
+ARGO_PWD=$(oc -n openshift-gitops get secret openshift-gitops-cluster -o jsonpath='{.data.admin\.password}' | base64 -d)
+ARGO_ROUTE=$(oc get route openshift-gitops-server -o jsonpath='{.spec.host}' -n openshift-gitops)
+argocd --insecure --grpc-web login $ARGO_ROUTE:443  --username admin --password $ARGO_PWD
+echo ${ARGO_PWD}
 ```
 
-### Kubernetes Kustomize - JsonPatches6902 overview
+## Add Git Repo to ArgoCD
+```
+argocd repo add https://github.com/lcolagio/lab-gitops-ops  --name git1
+```
 
-https://skryvets.com/blog/2019/05/15/kubernetes-kustomize-json-patches-6902/
+
+## Add managed OCP cluster to ArgoCD
+
+### Create context
+
+```
+CONTEXT=cluster1
+CLUSTER=cluster-0602
+DOMAIN=sandbox392.opentlc.com
+KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq
+
+oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
+oc config rename-context $(oc config current-context) ${CONTEXT}
+```
+
+### Show context
+
+```
+oc config  get-contexts  | grep ${CONTEXT}
+```
+
+### Switch context
+```
+oc config use-context ${CONTEXT}
+oc config current-context && oc whoami
+```
+
+### Comeback to OCP hub cluster
+```
+oc config use-context admin
+```
+
+### Add managed cluster to ArgoCD
+```
+argocd --insecure --grpc-web cluster add ${CONTEXT}
+```
