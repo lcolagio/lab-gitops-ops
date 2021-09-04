@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/lcolagio/lab-gitops-ops
+    repoURL: git1
     path: conf-ops/banner/overlays/cluster1
   destination:
     name: cluster1

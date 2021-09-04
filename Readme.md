@@ -76,16 +76,9 @@ oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-o
 
 ## ...
 
-## Draf Cconfiguration
+## Draft Configuration
 
 ### Configure ArgoCD Vault plugin
-
-#### Configurer le DEX
-```
-...
-```
-
-#### Configurer le vault-plugin
 
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/base/sa-vplugin.yaml
@@ -98,7 +91,6 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 <!-- ```  ``` -->
 
 # Annexes
-
 
 ## Login to ArgoCD
 ```
