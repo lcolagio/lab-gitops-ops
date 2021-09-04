@@ -1,5 +1,5 @@
 - op: add
-  path: /data/-
+  path: /data
   value: 
     repositories: |
       - name: git1
