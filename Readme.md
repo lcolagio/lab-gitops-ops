@@ -51,6 +51,13 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/cluster1
 ``` -->
 
+### Configure sealedSecret
+```
+oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator-cluster1.yaml
+```
+<!-- ```
+oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/base
+``` -->
 
 <!-- ```  ``` -->
 <!-- ```  ``` -->
@@ -60,7 +67,6 @@ kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overl
 
 
 ### Configure Banner
-
 You can choose color ;-)
 https://www.color-hex.com/
 
@@ -69,25 +75,15 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 ```
 
 ### Configure Oauth-htpass
-
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/oauth-htpass-cluster1.yaml
 ```
 
 ### Configure Permissions
-
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/permissions-cluster1.yaml
 ```
 
-### Configure sealedSecret
-
-```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/sealed-secrets-operator-cluster1.yaml
-```
-<!-- ```
-oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/base
-``` -->
 
 ## ...
 
