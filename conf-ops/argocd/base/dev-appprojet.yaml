@@ -4,3 +4,5 @@ metadata:
   name: dev
   namespace: openshift-gitops
 spec: {}
+
+# Read-only privileges in app-project dev to group dev in openshift

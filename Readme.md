@@ -92,6 +92,33 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 
 # Annexes
 
+## Install CLI ttols
+
+```
+### ArgoCD
+wget https://github.com/argoproj/argo-cd/releases/download/v2.1.1/argocd-linux-amd64
+mv argocd-linux-amd64 argocd
+chmod +x argocd
+sudo mv argocd /usr/bin/argocd
+argocd version
+
+### Kustomize
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+sudo mv kustomize /usr/bin/kustomize
+
+### kubeseal
+wget https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.12.4/kubeseal-linux-amd64 -O kubeseal
+sudo install -m 755 kubeseal /usr/local/bin/kubeseal
+rm kubeseal
+
+### Install helm
+wget https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64
+mv helm-linux-amd64 helm
+chmod +x helm
+sudo mv helm /usr/bin/helm
+helm version
+```
+
 ## Login to ArgoCD
 ```
 ARGO_PWD=$(oc -n openshift-gitops get secret openshift-gitops-cluster -o jsonpath='{.data.admin\.password}' | base64 -d)
