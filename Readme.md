@@ -10,7 +10,7 @@ cluster name is cluster1
 ### OpenShift GitOps Operator
 Boostrap OpenShift GitOps Operator
 ```
-oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
+oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/
 ```
 
 Boostrap Sealed-secrets
