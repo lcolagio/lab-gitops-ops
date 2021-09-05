@@ -14,7 +14,7 @@ spec:
     - description: No privileges to group dev in ops project
       groups:
         - dev
-      name: role-ops
+      name: role-dev
       policies:
         - 'p, proj:ops:role-dev, applications, *, ops/*, deny'
     - description: All privileges to group ops in ops project
