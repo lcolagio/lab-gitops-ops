@@ -7,10 +7,16 @@
 ## Install OpenShift GitOps (ArgoCD) to OCP Hub cluster
 Login to OCP Hub cluster
 ```
-CONTEXT=hub1
+<!-- CONTEXT=hub1
 CLUSTER=cluster-0602
 DOMAIN=sandbox392.opentlc.com
-KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq
+KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq -->
+
+CONTEXT=???
+CLUSTER=cluster-???
+DOMAIN=sandbox???.opentlc.com
+KUBEADMIN_PWD=????-????-????-????
+
 
 oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
 oc config rename-context $(oc config current-context) ${CONTEXT}
