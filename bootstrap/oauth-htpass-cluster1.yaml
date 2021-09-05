@@ -12,7 +12,8 @@ spec:
     repoURL: https://github.com/lcolagio/lab-gitops-ops
     path: conf-ops/oauth/overlays/cluster1/htpass
   destination:
-    name: cluster1
+    name: |
+      cluster1
   syncPolicy:
     automated:
       prune: true
