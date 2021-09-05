@@ -1,5 +1,8 @@
 # Bitnami Sealed Secrets
 
+## References
+- https://github.com/redlabclub/openshift4-config
+
 **Version: 0.16.0**
 
 ## Project Reference
