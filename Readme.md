@@ -6,12 +6,15 @@
 
 ## Install OpenShift GitOps (ArgoCD) to OCP Hub cluster
 Login to OCP Hub cluster
-```
-<!-- CONTEXT=hub1
+
+<!-- 
+CONTEXT=hub1
 CLUSTER=cluster-0602
 DOMAIN=sandbox392.opentlc.com
-KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq -->
+KUBEADMIN_PWD=n5btW-IqnhG-jRj4c-rRnuq 
+-->
 
+```
 CONTEXT=???
 CLUSTER=cluster-???
 DOMAIN=sandbox???.opentlc.com
