@@ -1,8 +1,6 @@
 # Oauth
 
-
-
-# Create or uppdate htpassword
+# Create or update htpassword
 
 ```
 SECRET=htpass-secret-xxx
