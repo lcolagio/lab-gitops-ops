@@ -21,8 +21,7 @@ oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-o
 use backuped Sealed-secrets PEM, 
 ```
 curl https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/conf-ops/sealed-secrets-operator/scripts/replace-sealed-secrets-secret.sh | bash
-``
-
+```
 
 ### Configure Argocd
 Add Dex, Add GitRepo, Add Remopte Cluster ...
