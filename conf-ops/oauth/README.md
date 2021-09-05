@@ -1,40 +1,11 @@
-# ClusterRoleBinding self-provisioners 
+# Oauth
 
-## To activate self-provisioners 
-```
-oc get ClusterRoleBinding self-provisioners  -o yaml
-```
+SECRET=htpass-secret.yaml
 
-```
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  annotations:
-    rbac.authorization.kubernetes.io/autoupdate: "true"
-  name: self-provisioners
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: self-provisioner
-subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: Group
-  name: system:authenticated:oauth
-```
+# Chiffrement du secret via le controler kubeseal
+cat ${SECRET}  | kubeseal --controller-namespace=sealed-secrets --controller-name=sealed-secret-controller-sealed-secrets -o yaml --scope strict > ${SECRET}-sealed.yaml
+
+# ou Chiffrement du secret via le cert (pem) récupéré précédement
+cat ${SECRET} | kubeseal -o yaml --cert $HOME/.bitnami/publickey.pem > ${SECRET}-sealed.yaml
 
 
-## To disable self-provisioners 
-```
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  annotations:
-    rbac.authorization.kubernetes.io/autoupdate: "false"
-    argocd.argoproj.io/sync-options: Prune=false    
-  name: self-provisioners
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: self-provisioner
-subjects: []
-```
