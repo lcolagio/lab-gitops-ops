@@ -3,7 +3,33 @@ kind: AppProject
 metadata:
   name: ops
   namespace: openshift-gitops
-spec: {}
-
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  roles:
+    - description: No privileges to group dev in ops project
+      groups:
+        - dev
+      name: role-ops
+      policies:
+        - 'p, proj:ops:role-dev, applications, *, ops/*, deny'
+    - description: All privileges to group ops in ops project
+      groups:
+        - ops
+      name: role-ops
+      policies:
+        - 'p, proj:ops:role-ops, applications, *, ops/*, allow'
+    - description: No privileges to group manager in ops project
+      groups:
+        - manager
+      name: role-manager
+      policies:
+        - 'p, proj:ops:role-manager, applications, get, ops/*, deny'
+  sourceRepos:
+    - 'https://github.com/lcolagio/lab-vault-plugin'
 # Read-only privileges in all app-project to group ops in openshift
 
