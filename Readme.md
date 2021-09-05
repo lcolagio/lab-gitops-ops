@@ -1,17 +1,18 @@
 # Lab GitOps for Ops
 
 
-## Deploy OpenShift GitOps (ArgoCD) to OCP Hub Cluster
+## Install OpenShift GitOps (ArgoCD) to OCP Hub Cluster
+cluster name is cluster1
 
-
-### Instal OpenShift GitOps  
+### OpenShift GitOps Operator
+Boostrap OpenShift GitOps Operator
 ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 ```
 
 ### Configure Argocd
 
-Add Dex, GitRepo, Cluster ...
+Add Dex, Add GitRepo, Add Remopte Cluster ...
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-cluster1.yaml
 ```
