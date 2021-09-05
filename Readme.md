@@ -10,8 +10,13 @@ Boostrap OpenShift GitOps Operator
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/stable
 ```
 
-### Configure Argocd
+Boostrap Sealed-secrets
+```
+oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/overlays/
+```
 
+
+### Configure Argocd
 Add Dex, Add GitRepo, Add Remopte Cluster ...
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-cluster1.yaml
@@ -20,10 +25,6 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/boo
 <!-- ```
 kustomize build https://github.com/lcolagio/lab-gitops-ops/conf-ops/argocd/overlays/cluster1
 ``` -->
-
-<!-- ```  ``` -->
-<!-- ```  ``` -->
-<!-- ```  ``` -->
 
 
 <!-- ```  ``` -->
