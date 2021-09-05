@@ -1,5 +1,8 @@
 # Lab GitOps for Ops
 
+## Top References
+- https://github.com/redlabclub/openshift4-config
+
 
 ## Install OpenShift GitOps (ArgoCD) to OCP Hub Cluster
 cluster name is cluster1
@@ -94,6 +97,7 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 
 # Annexes
 
+
 ## Install CLI ttols
 
 ```
@@ -133,7 +137,6 @@ echo ${ARGO_PWD}
 ```
 argocd repo add https://github.com/lcolagio/lab-gitops-ops  --name git1
 ```
-
 
 ## Add managed OCP cluster to ArgoCD
 
