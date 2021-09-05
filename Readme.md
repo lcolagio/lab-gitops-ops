@@ -20,7 +20,6 @@ CLUSTER=cluster-???
 DOMAIN=sandbox???.opentlc.com
 KUBEADMIN_PWD=????-????-????-????
 
-
 oc login -u kubeadmin -p ${KUBEADMIN_PWD} --insecure-skip-tls-verify https://api.${CLUSTER}.${DOMAIN}:6443
 oc config rename-context $(oc config current-context) ${CONTEXT}
 ```
@@ -103,16 +102,6 @@ oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-o
 ### ...
 
 ## ...
-
-## Draft Configuration
-
-### Configure ArgoCD Vault plugin
-
-```
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/base/sa-vplugin.yaml
-oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/argocd-vault-plugin-cluster1.yaml
-
-```
 
 <!-- ```  ``` -->
 <!-- ```  ``` -->
