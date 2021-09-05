@@ -4,10 +4,14 @@ kind: Kustomization
 bases:
   - ../../base
 
-patchesJson6902:
-- target:
-    group: console.openshift.io
-    version: v1
-    kind: ConsoleNotification
-    name: banner
-  path: banner-patch.yaml
+resources:
+  - sealedsecretcontroller.yaml
+#  - sealed-secret-ingress.yaml
+
+# patchesJson6902:
+# - target:
+#     group: console.openshift.io
+#     version: v1
+#     kind: ConsoleNotification
+#     name: banner
+#   path: banner-patch.yaml
