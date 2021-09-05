@@ -4,21 +4,26 @@
 - https://github.com/redlabclub/openshift4-config
 
 
-## Install OpenShift GitOps (ArgoCD) to OCP Hub Cluster
-cluster name is cluster1
+## Install OpenShift GitOps (ArgoCD) to OCP Hub cluster
+Login to OCP Hub cluster
+```
+oc login -u kubeadmin -p n5btW-IqnhG-jRj4c-rRnuq   https://api.cluster-0602.sandbox392.opentlc.com:6443 --insecure-skip-tls-verify
+```
 
-### OpenShift GitOps Operator
-Boostrap OpenShift GitOps Operator
+
+### Boostrap OpenShift GitOps Operator
+Install OpenShift GitOps Operator
 ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/openshift-gitops-operator/overlays/
 ```
 
-Boostrap Sealed-secrets
+### Boostrap Sealed-secrets
+Insttall sealed-secrets-operator
 ```
 oc apply -k https://github.com/lcolagio/lab-gitops-ops/conf-ops/sealed-secrets-operator/overlays/
 ```
 
-use backuped Sealed-secrets PEM, 
+Use backuped Sealed-secrets PEM, CERT
 ```
 curl https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/conf-ops/sealed-secrets-operator/scripts/replace-sealed-secrets-secret.sh | bash
 ```
