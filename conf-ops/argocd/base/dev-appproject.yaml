@@ -11,19 +11,19 @@ spec:
     - namespace: '*'
       server: '*'
   roles:
-    - description: All privileges to group dev in app project
+    - description: All privileges to group dev in dev project
       groups:
         - dev
       name: role-dev
       policies:
         - 'p, proj:dev:role-dev, applications, *, dev/*, allow'
-    - description: All privileges to group ops in app project
+    - description: All privileges to group ops in dev project
       groups:
         - ops
       name: role-ops
       policies:
         - 'p, proj:dev:role-ops, applications, *, dev/*, allow'
-    - description: Read-only privileges to group manager app project
+    - description: Read-only privileges to group manager in dev project
       groups:
         - manager
       name: role-manager
