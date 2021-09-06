@@ -11,6 +11,13 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 
 ## test App Gitops
 
+oc project openshift-gitops
+oc delete application app-demo-foo1
+oc delete application app-demo-bar1
+oc delete project app-demo-foo
+oc delete project app-demo-bar
+
+
 ### Create app-demo-foo and app-demo-bar project and bind openshift-gitops-argocd-application rolebinding
 
 ```
@@ -85,13 +92,17 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: app-demo-bar
+    namespace: app-demo-foo
     server: 'https://kubernetes.default.svc'
   source:
     path: applications/app-test-argocd
     repoURL: 'https://github.com/lcolagio/lab-vault-plugin'
     targetRevision: HEAD
   project: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 EOF
 
 oc delete application app-foo-dev -n openshift-gitops
@@ -114,5 +125,9 @@ spec:
     repoURL: 'https://github.com/lcolagio/lab-vault-plugin'
     targetRevision: HEAD
   project: ops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 EOF
 ```
