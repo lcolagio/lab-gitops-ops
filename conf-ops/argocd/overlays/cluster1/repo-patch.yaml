@@ -11,7 +11,7 @@
 
 
 - op: add
-  path: /data/repositories|
+  path: /data/repositories: |
   value: 
       - name: git1
         type: git
