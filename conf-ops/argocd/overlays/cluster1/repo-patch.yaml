@@ -1,7 +1,7 @@
 - op: add
   path: /data
   value: 
-
+  
 # Patch why are resources of type SealedSecret stuck in the Progressing state?
 # https://argo-cd.readthedocs.io/en/stable/faq/#why-are-resources-of-type-sealedsecret-stuck-in-the-progressing-state
 
@@ -11,10 +11,10 @@
       hs.message = "Controller doesn't report resource status"
       return hs
 
-    # repositories: |
-    #   - name: git1
-    #     type: git
-    #     url: https://github.com/lcolagio/lab-gitops-ops
-    #   - name: git2
-    #     type: git
-    #     url: https://github.com/lcolagio/lab-vault-plugin
+    repositories: |
+      - name: git1
+        type: git
+        url: https://github.com/lcolagio/lab-gitops-ops
+      - name: git2
+        type: git
+        url: https://github.com/lcolagio/lab-vault-plugin
