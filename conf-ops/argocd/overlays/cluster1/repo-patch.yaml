@@ -5,7 +5,6 @@
       - name: git1
         type: git
         url: https://github.com/lcolagio/lab-gitops-ops
-
       - name: git2
         type: git
         url: https://github.com/lcolagio/lab-vault-plugin
