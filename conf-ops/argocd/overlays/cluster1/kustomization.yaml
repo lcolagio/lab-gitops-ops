@@ -33,10 +33,10 @@ patches:
      name: argocd-cm
    path: repo-patch.yaml
 
--  target:
-     kind: ConfigMap
-     name: argocd-cm
-   path: sealed-secrets-patch.yaml
+# -  target:
+#      kind: ConfigMap
+#      name: argocd-cm
+#    path: sealed-secrets-patch.yaml
 
 # patches:
 # -  target:
