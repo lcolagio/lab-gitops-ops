@@ -42,7 +42,7 @@ curl https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/conf-ops/s
 ```
 
 ### Configure Argocd
-Add Dex, Add GitRepo, Add Remopte Cluster ...
+Add Dex, Add GitRepo, Add Remote Cluster ...
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/bootstrap/argocd-cluster1.yaml
 ```

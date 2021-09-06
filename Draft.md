@@ -1,6 +1,6 @@
-## Draft Configuration
+# Draft
 
-### Configure ArgoCD Vault plugin
+## Test Configure ArgoCD Vault plugin
 
 ```
 oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/draft/argocd-vault-plugin/base/sa-vplugin.yaml
@@ -8,17 +8,20 @@ oc apply -f https://raw.githubusercontent.com/lcolagio/lab-gitops-ops/master/dra
 
 ```
 
-### Create vplugin-demo project with openshift-gitops-argocd-application rolebinding
+
+## test App Gitops
+
+### Create app-demo-foo and app-demo-bar project and bind openshift-gitops-argocd-application rolebinding
 
 ```
-oc new-project vplugin-demo
+oc new-project app-demo-foo
 
 cat << EOF | oc apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: vplugin-demo-role-binding
-  namespace: vplugin-demo
+  name: app-demo-foo-role-binding
+  namespace: app-demo-foo
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -28,27 +31,46 @@ subjects:
   name: openshift-gitops-argocd-application-controller
   namespace: openshift-gitops
 EOF
+
+oc new-project app-demo-bar
+
+cat << EOF | oc apply -f -
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: app-demo-bar-role-binding
+  namespace: app-demo-bar
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- kind: ServiceAccount
+  name: openshift-gitops-argocd-application-controller
+  namespace: openshift-gitops
+EOF
+
+
 ```
 
 ### Test argocd deployment whitout vault plugin
 
 Just to test simple argocd app
 
-```
-oc delete application app-foo-dev -n openshift-gitops
 
+```
 cat << EOF | oc apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-foo-dev
+  name: app-foo1
   namespace: openshift-gitops
   labels:
     gitops: app-foo
 spec:
   destination:
     name: ''
-    namespace: vplugin-demo
+    namespace: app-foo
     server: 'https://kubernetes.default.svc'
   source:
     path: applications/app-test-argocd
@@ -56,26 +78,21 @@ spec:
     targetRevision: HEAD
   project: dev
 EOF
-```
 
-
-Just to test simple argocd app
-
-```
 oc delete application app-foo-dev -n openshift-gitops
 
 cat << EOF | oc apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-foo-dev
+  name: app-bar1
   namespace: openshift-gitops
   labels:
-    gitops: app-foo
+    gitops: app-bar
 spec:
   destination:
     name: ''
-    namespace: vplugin-demo
+    namespace: app-bar
     server: 'https://kubernetes.default.svc'
   source:
     path: applications/app-test-argocd
