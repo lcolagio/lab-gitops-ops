@@ -1,21 +1,16 @@
-# - op: add
-#   path: /data
-#   value: 
-#     repositories: |
-#       - name: git1
-#         type: git
-#         url: https://github.com/lcolagio/lab-gitops-ops
-#       - name: git2
-#         type: git
-#         url: https://github.com/lcolagio/lab-vault-plugin
-
-
 - op: add
-  path: /data/repositories:|
+  path: /data
   value: 
+    repositories: |
       - name: git1
         type: git
         url: https://github.com/lcolagio/lab-gitops-ops
       - name: git2
         type: git
         url: https://github.com/lcolagio/lab-vault-plugin
+        
+    resource.customizations.health.bitnami.com_SealedSecret: |
+      hs = {}
+      hs.status = "Healthy"
+      hs.message = "Controller doesn't report resource status"
+      return hs
