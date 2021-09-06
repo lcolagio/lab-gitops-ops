@@ -1,12 +1,21 @@
+# - op: add
+#   path: /data
+#   value: 
+#     repositories: |
+#       - name: git1
+#         type: git
+#         url: https://github.com/lcolagio/lab-gitops-ops
+#       - name: git2
+#         type: git
+#         url: https://github.com/lcolagio/lab-vault-plugin
+
+
 - op: add
-  path: /data
+  path: /data/repositories|
   value: 
-    repositories: |
       - name: git1
         type: git
         url: https://github.com/lcolagio/lab-gitops-ops
       - name: git2
         type: git
         url: https://github.com/lcolagio/lab-vault-plugin
-
-
