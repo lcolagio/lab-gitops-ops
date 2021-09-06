@@ -31,7 +31,6 @@ data:
   users.anonymous.enabled: 'false'
   configManagementPlugins: ''
   application.instanceLabelKey: ''
-
   resource.customizations.health.bitnami.com_SealedSecret: |
     hs = {}
     hs.status = "Healthy"
