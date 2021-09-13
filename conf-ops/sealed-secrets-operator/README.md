@@ -10,6 +10,7 @@ https://github.com/argoproj/argo-cd/issues/5991
 
 ## Add value 1 to SEALED_SECRETS_UPDATE_STATUS
 
+```
 kind: Deployment
 metadata:
   name: sealed-secret-controller-sealed-secret
@@ -21,7 +22,6 @@ spec:
           env:
             - name: SEALED_SECRETS_UPDATE_STATUS
               value: '1'
-              
-              
+```
               
 
