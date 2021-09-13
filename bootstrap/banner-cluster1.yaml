@@ -8,7 +8,7 @@ metadata:
     gitops: banner
 spec:
   destination:
-    name: cluster1
+    name: in-cluster
   project: default
   source:
     path: conf-ops/banner/overlays/cluster1
