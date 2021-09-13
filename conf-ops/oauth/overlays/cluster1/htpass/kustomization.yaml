@@ -5,8 +5,8 @@ bases:
   - ../../../base
 
 resources:
-#  - htpass-secret.yaml
-  - htpass-secret-sealed.yaml
+  - htpass-secret.yaml
+#  - htpass-secret-sealed.yaml
 
 patchesJson6902:
   - target:
