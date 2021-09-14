@@ -1,7 +1,10 @@
 # Lab GitOps for Ops
 
 ## Top References
+- https://github.com/redhat-cop/gitops-catalog
+- https://github.com/gnunn-gitops/standards
 - https://github.com/redlabclub/openshift4-config
+
 
 
 ## Install OpenShift GitOps (ArgoCD) to OCP Hub cluster
